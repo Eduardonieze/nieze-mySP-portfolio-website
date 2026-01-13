@@ -6,10 +6,237 @@
     <title>my Single Page Portfolio</title>
       <link rel="icon" href="https://logos-download.com/wp-content/uploads/2018/04/Spa_Water_logo_blue.png" type="image/png">
 
-     <style>
+      <style>
+        .navbar{
+            position: fixed;
+        }
+       .glow-on-hover {
+            width: 160px;
+            height: 50px;
+            border: none;
+            outline: none;
+            color: #fff;
+            background: #111;
+            background-position: center;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            float: center;
+        }
+       .glow-on-hover:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left:-2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+
+       .glow-on-hover:active {
+            color: #000
+        }
+
+       .glow-on-hover:active:after {
+            background: transparent;
+        }
+
+       .glow-on-hover:hover:before {
+            opacity: 1;
+        }
+
+       .glow-on-hover:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        } 
+        @keyframes glowing {
+         0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+
         body {
             background-image: url(https://wallpapercave.com/wp/wp3284839.gif);
         } 
+        header {
+            background-image: url(https://i.pinimg.com/1200x/a8/58/f6/a858f653b8876f4c3891f2f2984710c2.jpg);
+            color: white;
+            background-size: cover;
+            background-position: top;
+            padding: 1em;
+            text-align: center;
+            padding-top: 55px;
+        }
+
+        .active {
+            border-bottom: 2px solid white;
+        }
+        header h1 {
+            margin-top: 200px;
+        }
+    
+        nav {
+            background-color: #444;
+            padding: 1em;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            transition: background-color 0.5s ease;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1em;
+            cursor: pointer;
+        }
+        section {
+            padding: 2em;
+            scroll-margin-top: 50px;
+        }
+
+        /* Added styles for the contact button */
+        #contact-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #444;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #contact-button:hover {
+            background-color: #333;
+        }
+
+    
+        #contact {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+        }
+
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+        h1{
+            color: whitesmoke;
+            font-weight: 700px;
+        }
+        .h1{
+            color: rgb(88, 128, 128);
+        }
+        p{
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 500;
+            font-size: 13px;
+            font-style: inherit;
+            line-height: 12px;
+            padding: 0;
+            border: none;
+        }
+        .p1{
+            color: rgb(255, 255, 255);
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 500;
+            font-size: 13px;
+            font-style: italic;
+            line-height: 9px;
+            padding: 0;
+            border: none;
+        }
+        .resumePic{
+            margin-left: 300px;
+            border: none;
+            padding: 0;
+        }
+        .top{
+            color: #fff;
+            background-image: url(https://i.pinimg.com/originals/9b/e8/00/9be8004d9ecb27796fc40be36e5287ea.gif);
+            width: 200px;
+            height: 200px;
+            background-size: 50%;
+            background-attachment: fixed;
+        }
+        .top1{
+            background-image: url(https://media.giphy.com/media/3oz8xSoUW2rnGAFn6U/giphy.gif);
+            width: 200px;
+            height: 200px;
+        }
+
+
+        .container {
+            position: relative;
+            width: 50%;
+        }
+
+        .image {
+            display: block;
+            width: 40%;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 40%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #008CBA;
+        }
+
+        .container:hover .overlay {
+            opacity: 1;
+        }
+
+        .text {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
 
 </style>
 </head>
@@ -25,7 +252,7 @@
     <header>
         <section id="home">
         <h1 class="h1">WELCOME TO MY PORTFOLIO</h1>
-        <h1 class="h1">IT STUDENTS</h1></section>
+        <h1 class="h1"></h1></section>
     </header>
     <section id="about">
         <h1>About Me</h1>
@@ -41,29 +268,45 @@
         <div class="text">Hover</div></a>
             </div>
             </div>
+           <p>Just tap to view!</p>
+        <div class="container">
+           <a href="https://eduardonieze.github.io/myBouncing-Balls/" target="_blank">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/67adfdcd-a20b-42bd-8a41-e2587a0aa0ab/ddo680i-8a0f0d75-0a9f-41f7-b4e5-66ece79c69dd.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzY3YWRmZGNkLWEyMGItNDJiZC04YTQxLWUyNTg3YTBhYTBhYlwvZGRvNjgwaS04YTBmMGQ3NS0wYTlmLTQxZjctYjRlNS02NmVjZTc5YzY5ZGQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.6AGGRTGw-BCmNyM2OPPBR0jvEj5ldabijTTnsmop4tE" alt="Bouncing Ball" class="image">
+        <div class="overlay">
+        <div class="text">Bouncing Ball</div>
+        </div>
+          </a>
+        </div>
             <p>Just tap to view!</p>
         <div class="container">
-            <a href="https://eduardonieze.github.io/myBouncing-Balls/"><img src="http://sandiegofreepress.org/wp-content/uploads/2014/07/gif-animated-color-bouncing-balls.gif" alt="Avatar" class="image">
+            <a href="https://eduardonieze.github.io/it35-lab/"><img src="https://i.pinimg.com/originals/eb/c6/ae/ebc6ae821df4a6af9509267aef6de1ed.gif" alt="Avatar" class="image">
         <div class="overlay">
-        <div class="text">Bouncing Ball</div></a>
+        <div class="text">ma'hh Ionic proj</div></a>
+            </div>
+            </div>
+             <p>Just tap to view!</p>
+        <div class="container">
+            <a href="https://eduardonieze.github.io/duardphili/"><img src="https://i.pinimg.com/originals/1f/b8/2f/1fb82fd964c6a7a36b4c93fd786cbad4.gif" alt="Avatar" class="image">
+        <div class="overlay">
+        <div class="text">Cihper Proj</div></a>
             </div>
             </div>
     </section>
     <section id="resume">
         <h1>Resume</h1>
         <div class="resumePic">
-            <img src="https://i.pinimg.com/736x/db/9c/82/db9c82ae9b3d09b9b35955b03bb5730d.jpg" alt="My Profile Image" style="width: 250pz; height: 190px;">
+            <img src="https://i.pinimg.com/1200x/95/38/b1/9538b1cb952fd107fbcadcae2e8abc44.jpg" alt="My Profile Image"  style="width: 190px; height: 190px; border-radius: 50%;">
             <p>Name: Eduardo Jr. C. Nieze</p>
-            <p>Age & Gender: 20 Years old & Male</p>
+            <p>Age & Gender: 22 Years old & Male</p>
             <p>Nationality: Filipino</p>
             <p>Religion: Roman Catholic</p>
             <p>Status: Single</p>
-            <p>Hobbies: Playing mobile games, Watching movies ang anime and Playing Basketball</p>
+            <p>Hobbies: Playing mobile games, Watching movies and anime and Playing Basketball</p>
             <p>Mother's Name: Amelita C. Nieze</p>
             <p>Father's Name: Eduardo C. Nieze</p>
             <p>Address: Zone-1 Mantibugao, Manolo Fortich, Bukidnon</p>
             <p>School: Northern Bukidnon State College</p>
-            <p>Course: Bachelor of Science in Information Technelogy</p>
+            <p>Course: Bachelor of Science in Information Technology</p>
             <p>Experience: Graduate in Hydraulic Excavator nc||, I can ride Backhoe </p>
             <p>Email Address: eduardonize143@gmail.com</p>
             <p>Phone #: 09056408417</p>
