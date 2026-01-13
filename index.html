@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my Single Page Portfolio</title>
-      <link rel="icon" href="https://logos-download.com/wp-content/uploads/2018/04/Spa_Water_logo_blue.png" type="image/png">
+      <link rel="icon" href="https://i.pinimg.com/736x/db/9c/82/db9c82ae9b3d09b9b35955b03bb5730d.jpg" type="image/png">
+       <script src="smooth-scroll.js"></script>
 
       <style>
         .navbar{
@@ -73,15 +74,33 @@
         body {
             background-image: url(https://wallpapercave.com/wp/wp3284839.gif);
         } 
-        header {
-            background-image: url(https://i.pinimg.com/1200x/a8/58/f6/a858f653b8876f4c3891f2f2984710c2.jpg);
-            color: white;
-            background-size: cover;
-            background-position: top;
-            padding: 1em;
-            text-align: center;
-            padding-top: 55px;
-        }
+       header {
+    background-image: 
+        url('https://i.pinimgcom/736x/db/9c/82/db9c82ae9b3d09b9b35955b03bb5730d.jpg' ), 
+        url('https://i.pinimg.com/1200x/a8/58/f6/a858f653b8876f4c3891f2f2984710c2.jpg');
+    background-size: 100px 100px, cover; /* first image small, second covers */
+     /* first image on top center, second default */
+    background-repeat: no-repeat, no-repeat;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    padding-top: 55px;
+
+}
+
+        .circle-img {
+    position: absolute;      /* put it on top of the header background */
+    top: 50%;                /* adjust vertical position */
+    left: 50%;               /* adjust horizontal position */
+    transform: translate(-50%, -50%); /* center perfectly */
+    width: 150px;            /* size of the circle */
+    height: 150px;
+    border-radius: 50%;      /* makes it circular */
+    border: 3px solid white; /* optional: border around the circle */
+    object-fit: cover;       /* ensures image fits nicely */
+    z-index: 10;             /* above background */
+}
+
 
         .active {
             border-bottom: 2px solid white;
@@ -157,6 +176,7 @@
         }
         .h1{
             color: rgb(88, 128, 128);
+             padding-top: 70px;
         }
         p{
             color: white;
@@ -250,6 +270,7 @@
     <a href="#contact"onclick="toggleMenu()"><button class="glow-on-hover" type="button">Contact</button></a>
     </div>
     <header>
+        <img src="https://i.pinimg.com/736x/db/9c/82/db9c82ae9b3d09b9b35955b03bb5730d.jpg" alt="Profile Picture" class="circle-img">
         <section id="home">
         <h1 class="h1">WELCOME TO MY PORTFOLIO</h1>
         <h1 class="h1"></h1></section>
