@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my Single Page Portfolio</title>
       <link rel="icon" href="https://i.pinimg.com/736x/db/9c/82/db9c82ae9b3d09b9b35955b03bb5730d.jpg" type="image/png">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
        <script src="smooth-scroll.js"></script>
 
       <style>
@@ -75,31 +77,30 @@
             background-image: url(https://wallpapercave.com/wp/wp3284839.gif);
         } 
        header {
-    background-image: 
-        url('https://i.pinimgcom/736x/db/9c/82/db9c82ae9b3d09b9b35955b03bb5730d.jpg' ), 
+             background-image: 
+        url('https://i.pinimg.com/736x/db/9c/82/db9c82ae9b3d09b9b35955b03bb5730d.jpg' ), 
         url('https://i.pinimg.com/1200x/a8/58/f6/a858f653b8876f4c3891f2f2984710c2.jpg');
-    background-size: 100px 100px, cover; /* first image small, second covers */
-     /* first image on top center, second default */
-    background-repeat: no-repeat, no-repeat;
-    color: white;
-    padding: 1em;
-    text-align: center;
-    padding-top: 55px;
+             background-size: 100px 100px, cover; 
+            background-repeat: no-repeat, no-repeat;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            padding-top: 55px;
 
-}
+        }
 
         .circle-img {
-    position: absolute;      /* put it on top of the header background */
-    top: 50%;                /* adjust vertical position */
-    left: 50%;               /* adjust horizontal position */
-    transform: translate(-50%, -50%); /* center perfectly */
-    width: 150px;            /* size of the circle */
-    height: 150px;
-    border-radius: 50%;      /* makes it circular */
-    border: 3px solid white; /* optional: border around the circle */
-    object-fit: cover;       /* ensures image fits nicely */
-    z-index: 10;             /* above background */
-}
+            position: absolute;      
+            top: 50%;              
+            left: 50%;              
+            transform: translate(-50%, -50%);
+            width: 150px;           
+            height: 150px;
+            border-radius: 50%;      
+            border: 3px solid white; 
+            object-fit: cover;       
+            z-index: 10;             
+        }
 
 
         .active {
@@ -258,6 +259,28 @@
             text-align: center;
         }
 
+        .social-icons {
+             display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 32px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+        .social-icons a:hover .fa-facebook { color: #1877f2; }
+        .social-icons a:hover .fa-github { color: #000000; }
+        .social-icons a:hover .fa-envelope { color: #ea4335; }
+        .social-icons a:hover .fa-instagram { color: #e1306c;
+}
+
+
 </style>
 </head>
 
@@ -334,10 +357,27 @@
            </div><br>
     </section>
     <section id="contact">
-        <h2>Contact Us</h2>
+            <h2>Contact Us</h2>
         <div class="social-icons">
-            <a href="https://www.facebook.com/ezein.nieze/" target="_blank">Facebook</a>
+            <a href="https://www.facebook.com/ezein.nieze/" target="_blank" title="Facebook">
+            <i class="fab fa-facebook"></i>
+            </a>
+
+            <a href="https://github.com/Eduardonieze" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+            </a>
+
+            <a href="https://mail.google.com/mail/u/1/#inbox?compose=new" title="Email">
+            <i class="fas fa-envelope"></i>
+            </a>
+
+            <a href="https://www.instagram.com/duardex_082/" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+            </a>
+
+
         </div>
+
         <p>Visit me at: Zone-1 Mantibugao, Manolo Fortich, Bukidnon</p>
         <p></p>
         <p>Phone: 09056408417</p>
